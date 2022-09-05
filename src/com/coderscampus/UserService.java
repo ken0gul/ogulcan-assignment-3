@@ -12,7 +12,6 @@ public class UserService {
 		user.setPassword(args[1]);
 		user.setName(args[2]);
 
-		user.getUsername();
 		
 		
 		return user;
