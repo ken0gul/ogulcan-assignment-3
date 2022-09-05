@@ -41,7 +41,9 @@ public class UserLoginApplication {
 
 		for (int i = 0; i < 4; i++) {
 
+			// Populate test (User object) with the data received from data.txt file as an array
 			test = user1.createUser(users[i].split(","));
+			// get usernames, passwords and names as Strings and store them in to different arrays
 			usernames[i] = test.getUsername();
 			passwords[i] = test.getPassword();
 			names[i] = test.getName();
@@ -92,7 +94,6 @@ public class UserLoginApplication {
 //				}
 //
 //			}
-				i++;
 			}
 			// If loginSuccess is still false when the loop is over then print the line below
 			if (loginSuccess == false) {
