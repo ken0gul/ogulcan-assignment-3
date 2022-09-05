@@ -19,6 +19,8 @@ public class UserLoginApplication {
 		String[] names = new String[4];
 		Boolean loginSuccess = false;
 
+		
+		// Instantiate a new object from UserService
 		UserService user1 = new UserService();
 		BufferedReader reader = null;
 		try {
@@ -46,41 +48,58 @@ public class UserLoginApplication {
 
 		}
 
-		// Create a Scanner to get input from the console
-		Scanner scanner = new Scanner(System.in);
+		try (// Create a Scanner to get input from the console
+				Scanner scanner = new Scanner(System.in)) {
+			int i = 0;
+			outerloop: while (i < 5) {
 
-		// A for loop for 5 login attempts
-		for (int i = 0; i < 5; i++) {
+				String username = scanner.nextLine();
+				String password = scanner.nextLine();
 
-			String username = scanner.nextLine();
-			String password = scanner.nextLine();
+				// Check for validation
 
-			// Check for validation
-			
-			
-			
+				for (int j = 0; j < 4; j++) {
+					if (usernames[j].toLowerCase().matches(username) && passwords[j].matches(password)) {
+						System.out.println("Welcome " + names[j]);
+						loginSuccess = true;
+						break outerloop;
+					}
 
-			int j = 0;
-			while (j < 4) {
-				++j;
-				if (usernames[j].toLowerCase().equals(username.toLowerCase()) && passwords[j].equals(password)) {
-
-					System.out.println("Welcome " + names[j]);
-					i = 5;
-					loginSuccess = true;
-					break;
-				} else {
-					System.out.println("Invalid input");
-					break;
+				}
+				// If login is not successfull print the line below
+				if (loginSuccess == false) {
+					System.out.println("Invalid Login Attempt! Try Again.");
 				}
 
+//				
+//			if (usernames[i].toLowerCase().equals(username.toLowerCase()) && passwords[i].equals(password)) {
+//				System.out.println("Welcome " + names[i]);
+//			} 
+
+//
+//			int j = 0;
+//			while (j < 4) {
+//				++j;
+//				if (usernames[j].toLowerCase().equals(username.toLowerCase()) && passwords[j].equals(password)) {
+//
+//					System.out.println("Welcome " + names[j]);
+//					i = 5;
+//					loginSuccess = true;
+//					break;
+//				} else {
+//					System.out.println("Invalid input");
+//					break;
+//				}
+//
+//			}
+				i++;
 			}
-		}
-		
-		
-		scanner.close();
-		if (loginSuccess == false) {
-			System.out.println("Too many failed login attempts, you are now locked out.");
+			// If loginSuccess is still false when the loop is over then print the line below
+			if (loginSuccess == false) {
+				System.out.println("Too many failed login attempts, you are now locked out.");
+			}
+
+			scanner.close();
 		}
 
 	}
