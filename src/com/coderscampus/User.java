@@ -5,7 +5,6 @@ public class User {
 	private String username;
 	private String password;
 	private String name;
-	
 	public String getUsername() {
 		return username;
 	}
@@ -24,6 +23,5 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 }
