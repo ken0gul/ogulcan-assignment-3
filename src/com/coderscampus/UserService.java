@@ -1,6 +1,8 @@
 package com.coderscampus;
 
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 public class UserService {
 
@@ -16,6 +18,21 @@ public class UserService {
 		
 		return user;
 	}
+	
+	public BufferedReader getData() {
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new FileReader("data.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return reader;
+		
+		
+	}
+	
+	
 	
 
 }

@@ -2,7 +2,6 @@ package com.coderscampus;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -22,9 +21,9 @@ public class UserLoginApplication {
 		
 		// Instantiate a new object from UserService
 		UserService user1 = new UserService();
-		BufferedReader reader = null;
+		BufferedReader reader = user1.getData();
 		try {
-			reader = new BufferedReader(new FileReader("data.txt"));
+//			reader = new BufferedReader(new FileReader("data.txt"));
 			String line;
 			int i = 0;
 			while ((line = reader.readLine()) != null) {
