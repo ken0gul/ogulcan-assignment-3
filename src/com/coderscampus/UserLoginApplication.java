@@ -54,14 +54,15 @@ public class UserLoginApplication {
 				Scanner scanner = new Scanner(System.in)) {
 			int i = 0;
 			outerloop: while (i < 5) {
-
+				System.out.println("Please enter your username: ");
 				String username = scanner.nextLine();
+				System.out.println("Please enter your password: ");
 				String password = scanner.nextLine();
 
 				// Check for validation
 
 				for (int j = 0; j < 4; j++) {
-					if (usernames[j].toLowerCase().matches(username) && passwords[j].matches(password)) {
+					if (usernames[j].toLowerCase().matches(username.toLowerCase()) && passwords[j].matches(password)) {
 						System.out.println("Welcome " + names[j]);
 						loginSuccess = true;
 						break outerloop;
