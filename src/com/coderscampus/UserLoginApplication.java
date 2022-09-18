@@ -74,10 +74,12 @@ public class UserLoginApplication {
 				}
 
 
-			}
-			// If loginSuccess is still false when the loop is over then print the line below
-			if (loginSuccess == false) {
-				System.out.println("Too many failed login attempts, you are now locked out.");
+				// If loginSuccess is still false when the loop is over then print the line below
+				if (loginSuccess == false && i == 4) {
+					System.out.println("Too many failed login attempts, you are now locked out.");
+				}
+				
+				i++;
 			}
 
 			scanner.close();
