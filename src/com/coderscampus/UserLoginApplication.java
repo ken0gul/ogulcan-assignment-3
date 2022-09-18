@@ -73,27 +73,7 @@ public class UserLoginApplication {
 					System.out.println("Invalid Login Attempt! Try Again.");
 				}
 
-//				
-//			if (usernames[i].toLowerCase().equals(username.toLowerCase()) && passwords[i].equals(password)) {
-//				System.out.println("Welcome " + names[i]);
-//			} 
 
-//
-//			int j = 0;
-//			while (j < 4) {
-//				++j;
-//				if (usernames[j].toLowerCase().equals(username.toLowerCase()) && passwords[j].equals(password)) {
-//
-//					System.out.println("Welcome " + names[j]);
-//					i = 5;
-//					loginSuccess = true;
-//					break;
-//				} else {
-//					System.out.println("Invalid input");
-//					break;
-//				}
-//
-//			}
 			}
 			// If loginSuccess is still false when the loop is over then print the line below
 			if (loginSuccess == false) {
